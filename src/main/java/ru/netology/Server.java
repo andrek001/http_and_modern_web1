@@ -16,7 +16,9 @@ import java.util.concurrent.Future;
 
 public class Server {
     boolean work;
+    private final ExecutorService threadPool;
     public Server() {
+        this.threadPool = Executors.newFixedThreadPool(64);
         work = false;
     }
     public void start() {
